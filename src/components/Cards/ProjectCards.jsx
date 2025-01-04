@@ -23,8 +23,7 @@ const Image = styled.img`
   width: 195px; /* Set a fixed width for the circular image */
   height: 200px; /* Set a fixed height (same as width) */
   object-fit: cover; /* Ensure the image is cropped correctly */
-  border-radius: 50%; /* Makes the image circular */
-  background-color: #011762;
+  border-radius: 30%; /* Makes the image circular */
 `;
 
 const Details = styled.div`
