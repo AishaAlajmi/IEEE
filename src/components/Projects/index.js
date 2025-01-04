@@ -51,6 +51,7 @@ const Projects = ({ openModal, setOpenModal }) => {
       <Container>
         <Title>
           <TitleArrow>&#9664;</TitleArrow> Achievements  </Title>
+        <Wrapper>
           <ArrowButton onClick={handlePrev} disabled={currentIndex === 0}>
             &#8249;
           </ArrowButton>
@@ -72,6 +73,7 @@ const Projects = ({ openModal, setOpenModal }) => {
           >
             &#8250;
           </ArrowButton>
+        </Wrapper>
       </Container>
   );
 };
