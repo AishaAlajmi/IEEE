@@ -101,7 +101,7 @@ function Footer() {
           <SocialMediaIcon href={Bio.linkedin} target="display"><LinkedInIcon /></SocialMediaIcon>
         </SocialMediaIcons>
         <Copyright>
-          &copy; 2023 Aisha Alajmi. All rights reserved.
+          &copy; 2024 Aisha Alajmi. All rights reserved.
         </Copyright>
 
       </FooterWrapper>

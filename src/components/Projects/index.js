@@ -48,7 +48,8 @@ const Projects = ({ openModal, setOpenModal }) => {
   };
 
   return (
-      <Container>
+    <OuterContainer>
+  <Container>
         <Title>
           <TitleArrow>&#9664;</TitleArrow> Achievements  </Title>
         <Wrapper>
@@ -74,8 +75,10 @@ const Projects = ({ openModal, setOpenModal }) => {
             &#8250;
           </ArrowButton>
         </Wrapper>
-      </Container>
+      </Container>       </OuterContainer>
+
   );
 };
 
 export default Projects;
+

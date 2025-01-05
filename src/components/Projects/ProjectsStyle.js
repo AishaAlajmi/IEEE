@@ -1,20 +1,52 @@
+
 import styled from 'styled-components';
+export const Wrapper = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1350px;
+  padding: 10px 0px 100px 0;
+  gap: 12px;
 
+  @media (max-width: 768px) {
+    flex-direction: row; /* Ensure items are in a row */
+    justify-content: space-between; /* Arrows stay left and right */
+  }
+`;
 
+export const CardContainer = styled.div`
+  display: flex;
+  gap: 28px;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+export const OuterContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+`;
 
 export const Container = styled.div`
-  background: #E6EAF9;
+  background: #e6eaf9;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
-  z-index: 1;
   align-items: center;
-  padding: 40px 0;
   width: 100%;
-  max-width: 1400px; /* Optional for central alignment */
-  border-radius: 16px; /* Optional for rounded container look */
+  max-width: 1400px;
+  border-radius: 16px;
+  padding: 40px 0;
 
+  @media (max-width: 768px) {
+    padding: 20px 10px; /* Reduce padding on smaller screens */
+  }
 `;
 
 export const Title = styled.div`
@@ -45,30 +77,8 @@ color: #012DC1;
 }
 `;
 
-
-export const Wrapper = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 1350px;
-  padding: 10px 0px 100px 0;
-  gap: 12px;
-`;
-
-export const CardContainer = styled.div`
-  display: flex;
-  gap: 28px;
-  overflow: hidden;
-  flex-wrap: nowrap; /* Ensures that cards are in a single row */
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-`;
-
 export const ArrowButton = styled.button`
-  background-color: #012DC1;
+  background-color: #012dc1;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -76,12 +86,21 @@ export const ArrowButton = styled.button`
   font-weight: bold;
   border-radius: 50%;
   cursor: pointer;
-  position: relative;
-  z-index: 10;
-  margin: 0 12px; /* Default margin between the button and container */
+  position: absolute; /* Use absolute positioning for arrows */
+  top: 45%; /* Move the arrow slightly up */
+  transform: translateY(-50%); /* Adjust for perfect vertical centering */
+  z-index: 2;
+
+  &:first-child {
+    left: -20px; /* Position the left arrow */
+  }
+
+  &:last-child {
+    right: -20px; /* Position the right arrow */
+  }
 
   &:hover {
-    background-color: #043EFF;
+    background-color: #043eff;
   }
 
   &:disabled {
@@ -90,10 +109,7 @@ export const ArrowButton = styled.button`
   }
 
   @media (max-width: 768px) {
-    margin: 0 24px; /* Add more space on smaller screens */
-  }
-
-  @media (max-width: 480px) {
-    margin: 0 32px; /* Add even more space for very small screens */
+    top: 30%; /* Keep the arrow slightly higher on mobile too */
+  
   }
 `;

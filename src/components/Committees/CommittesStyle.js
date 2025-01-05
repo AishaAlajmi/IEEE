@@ -1,47 +1,5 @@
+
 import styled from 'styled-components';
-
-export const ArrowButton = styled.button`
-  background-color: #012dc1;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 24px;
-  font-weight: bold;
-  border-radius: 50%;
-  cursor: pointer;
-  position: absolute; /* Use absolute positioning for arrows */
-  top: 45%; /* Move the arrow slightly up */
-  transform: translateY(-50%); /* Adjust for perfect vertical centering */
-  z-index: 2;
-
-  &:first-child {
-    left: -20px; /* Position the left arrow */
-  }
-
-  &:last-child {
-    right: -20px; /* Position the right arrow */
-  }
-
-  &:hover {
-    background-color: #043eff;
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    background-color: #ccc;
-  }
-
-  @media (max-width: 768px) {
-    top: 30%; /* Keep the arrow slightly higher on mobile too */
-    &:first-child {
-      left:5px; /* Adjust left arrow position */
-    }
-    &:last-child {
-      right: 5px; /* Adjust right arrow position */
-    }
-  }
-`;
-
 export const Wrapper = styled.div`
   position: relative;
   display: flex;
@@ -92,26 +50,67 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 42px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #012dc1;
-  text-align: center; /* Center the title */
+display: flex;
+align-items: center; /* Align arrow and text vertically */
+font-size: 42px;
+font-weight: 600;
+margin-bottom: 20px;
+color: #012DC1;
+align-self: flex-start;
+margin-left: 100px; /* Increased margin to move it further to the right */
 
-  @media (max-width: 768px) {
-    font-size: 32px;
-  }
+@media (max-width: 768px) {
+  font-size: 32px;
+  margin-bottom: 16px;
+  margin-left: 60px; /* Adjust for smaller screens */
+}
 `;
 
 export const TitleArrow = styled.span`
-  display: inline-block;
-  font-size: 36px;
-  margin-right: 12px;
-  color: #012dc1;
+display: inline-block;
+font-size: 36px;
+margin-right: 12px; /* Spacing between the arrow and the text */
+color: #012DC1;
+
+@media (max-width: 768px) {
+  font-size: 28px; /* Smaller arrow size for smaller screens */
+}
+`;
+
+
+export const ArrowButton = styled.button`
+  background-color: #012dc1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute; /* Use absolute positioning for arrows */
+  top: 45%; /* Move the arrow slightly up */
+  transform: translateY(-50%); /* Adjust for perfect vertical centering */
+  z-index: 2;
+
+  &:first-child {
+    left: -20px; /* Position the left arrow */
+  }
+
+  &:last-child {
+    right: -20px; /* Position the right arrow */
+  }
+
+  &:hover {
+    background-color: #043eff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+  }
 
   @media (max-width: 768px) {
-    font-size: 28px;
+    top: 30%; /* Keep the arrow slightly higher on mobile too */
+  
   }
 `;
