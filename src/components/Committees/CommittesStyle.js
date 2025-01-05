@@ -77,15 +77,14 @@ color: #012DC1;
 }
 `;
 
-
 export const ArrowButton = styled.button`
-  background-color: #012dc1;
-  color: white;
-  border: none;
+  background-color: #e6eaf9; /* Set the circle background color */
+  color: #012dc1; /* Set the inner arrow color */
+  border: 3px solid #012dc1; /* Add border with color */
   padding: 10px 20px;
   font-size: 24px;
   font-weight: bold;
-  border-radius: 50%;
+  border-radius: 50%; /* Make it a perfect circle */
   cursor: pointer;
   position: absolute; /* Use absolute positioning for arrows */
   top: 45%; /* Move the arrow slightly up */
@@ -101,16 +100,24 @@ export const ArrowButton = styled.button`
   }
 
   &:hover {
-    background-color: #043eff;
+    background-color: #043eff; /* Optional hover effect */
+    color: #ffffff; /* Change arrow color on hover */
   }
 
   &:disabled {
     cursor: not-allowed;
-    background-color: #ccc;
   }
 
   @media (max-width: 768px) {
-    top: 30%; /* Keep the arrow slightly higher on mobile too */
-  
+    top: 30%; /* Adjust vertical position on mobile */
+    padding: 8px 16px; /* Make the button smaller on mobile */
+    font-size: 20px; /* Reduce the size of the arrow */
+  }
+
+  @media (max-width: 480px) {
+    left: -15px;
+    right: -15px;
+    padding: 6px 12px; /* Further reduce button size on very small screens */
+    font-size: 18px; /* Further reduce arrow size */
   }
 `;
