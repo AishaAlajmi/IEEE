@@ -103,46 +103,36 @@ export const ImageWrapper = styled.div`
 `;
 
 export const ArrowButton = styled.button`
-  background-color: #e6eaf9; /* Set the circle background color */
-  color: #012dc1; /* Set the inner arrow color */
-  border: 3px solid #012dc1; /* Add border with color */
-  padding: 10px 20px;
-  font-size: 24px;
-  font-weight: bold;
-  border-radius: 50%; /* Make it a perfect circle */
+  background: #021f87;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
   cursor: pointer;
-  position: absolute; /* Use absolute positioning for arrows */
-  top: 45%; /* Move the arrow slightly up */
-  transform: translateY(-50%); /* Adjust for perfect vertical centering */
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 2;
 
   &:first-child {
-    left: -20px; /* Position the left arrow */
+    left: -15px; /* Half inside the image */
   }
 
   &:last-child {
-    right: -20px; /* Position the right arrow */
+    right: -15px; /* Half inside the image */
   }
 
   &:hover {
-    background-color: #043eff; /* Optional hover effect */
-    color: #ffffff; /* Change arrow color on hover */
+    background: #043eff;
   }
 
   &:disabled {
+    background: #ccc;
     cursor: not-allowed;
-  }
-
-  @media (max-width: 768px) {
-    top: 30%; /* Adjust vertical position on mobile */
-    padding: 8px 16px; /* Make the button smaller on mobile */
-    font-size: 20px; /* Reduce the size of the arrow */
-  }
-
-  @media (max-width: 480px) {
-    left: -15px;
-    right: -15px;
-    padding: 6px 12px; /* Further reduce button size on very small screens */
-    font-size: 18px; /* Further reduce arrow size */
   }
 `;
