@@ -6,10 +6,11 @@ import {
   Title,
   CardContainer,
   ArrowButton,
-  TitleArrow,
+  SectionArrow,
 } from "./ProjectsStyle";
 import ProjectCard from "../Cards/ProjectCards";
 import { projects } from "../../data/constants";
+import SectionArrowImg from "../../images/Polygon 7.png";
 
 const Projects = ({ openModal, setOpenModal }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -51,7 +52,8 @@ const Projects = ({ openModal, setOpenModal }) => {
     <OuterContainer>
   <Container>
         <Title>
-          <TitleArrow>&#9664;</TitleArrow> Achievements  </Title>
+        <SectionArrow src={SectionArrowImg} alt="Arrow Icon" />
+        Achievements  </Title>
         <Wrapper>
           <ArrowButton onClick={handlePrev} disabled={currentIndex === 0}>
             &#8249;

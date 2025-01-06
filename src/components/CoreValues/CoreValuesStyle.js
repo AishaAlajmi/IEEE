@@ -53,13 +53,28 @@ export const Container = styled.div`
 export const CoreValuesWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-between;
   width: 100%;
   position: relative;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%; /* Place the line in the center of the images */
+    left: 10%; /* Start slightly after the first image */
+    right: 10%; /* End slightly before the last image */
+    height: 2px;
+    background-color: #012dc1;
+    z-index: 0;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 40px;
+
+    &::before {
+      content: none; /* Hide the line for smaller screens */
+    }
   }
 `;
 
@@ -69,10 +84,9 @@ export const CoreValue = styled.div`
   align-items: center;
   text-align: center;
   position: relative;
+  z-index: 1;
 
-  top: ${(props) => (props.isUp ? "-20px" : "0px")};
   @media (max-width: 768px) {
-    top: 0;
     flex-direction: row;
     gap: 20px;
   }
@@ -82,7 +96,6 @@ export const Icon = styled.img`
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: #012dc1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,29 +108,13 @@ export const Icon = styled.img`
 `;
 
 export const CoreValueTitle = styled.div`
-  margin-top: 16px;
+  margin-top: ${(props) => (props.isAbove ? "-50px" : "16px")}; /* Move Creativity and Social Responsibility above */
   font-size: 20px;
   font-weight: 600;
   color: #012dc1;
 
   @media (max-width: 768px) {
     font-size: 18px;
-    margin-top: 0;
-  }
-`;
-
-export const HorizontalLine = styled.div`
-  height: 2px;
-  background-color: #012dc1;
-  width: ${(props) => (props.isVertical ? "2px" : "100px")};
-  position: ${(props) => (props.isVertical ? "absolute" : "static")};
-  top: ${(props) => (props.isVertical ? "50%" : "auto")};
-  left: ${(props) => (props.isVertical ? "50%" : "auto")};
-  transform: ${(props) =>
-    props.isVertical ? "translate(-50%, -50%)" : "none"};
-
-  @media (max-width: 768px) {
-    width: 2px;
-    height: 50px;
+    margin-top: ${(props) => (props.isAbove ? "-40px" : "0")};
   }
 `;

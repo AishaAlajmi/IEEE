@@ -66,15 +66,14 @@ margin-left: 100px; /* Increased margin to move it further to the right */
 }
 `;
 
-export const TitleArrow = styled.span`
-display: inline-block;
-font-size: 36px;
-margin-right: 12px; /* Spacing between the arrow and the text */
-color: #012DC1;
+export const SectionArrow = styled.img`
+  width: 20px;
+  height: auto;
+  margin-right: 12px;
 
-@media (max-width: 768px) {
-  font-size: 28px; /* Smaller arrow size for smaller screens */
-}
+  @media (max-width: 768px) {
+    width: 30px;
+  }
 `;
 
 

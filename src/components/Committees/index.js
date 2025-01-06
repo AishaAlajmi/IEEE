@@ -7,10 +7,11 @@ import {
   Title,
   CardContainer,
   ArrowButton,
-  TitleArrow,
+  SectionArrow,
 } from "./CommittesStyle";
 import CommitteeCard from "../Cards/CommitteesCards";
 import { Committees } from "../../data/constants";
+import SectionArrowImg from "../../images/Polygon 7.png";
 
 const CommitteesSection = ({ openModal, setOpenModal }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -52,7 +53,8 @@ const CommitteesSection = ({ openModal, setOpenModal }) => {
     <OuterContainer>
       <Container>
         <Title>
-          <TitleArrow>&#9664;</TitleArrow> Committees
+        <SectionArrow src={SectionArrowImg} alt="Arrow Icon" />
+        Committees
         </Title>
         <Wrapper>
           <ArrowButton onClick={handlePrev} disabled={currentIndex === 0}>

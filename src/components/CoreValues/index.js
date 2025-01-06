@@ -8,7 +8,6 @@ import {
   CoreValue,
   Icon,
   CoreValueTitle,
-  HorizontalLine,
 } from "./CoreValuesStyle";
 import { CoreValuesList } from "../../data/constants";
 import SectionArrowImg from "../../images/Polygon 7.png";
@@ -22,16 +21,18 @@ const CoreValuesSection = () => {
           Core Values
         </Title>
         <CoreValuesWrapper>
-          {CoreValuesList.map((value, index) => (
-            <React.Fragment key={value.id}>
-              <CoreValue isUp={index === 1 || index === 3}>
-                <Icon src={value.image} alt={value.title} />
+          {CoreValuesList.map((value) => (
+            <CoreValue key={value.id}>
+              {/* Show the title above only for "Creativity" and "Social Responsibility" */}
+              {value.title === "Creativity" || value.title === "Social Responsibility" ? (
                 <CoreValueTitle>{value.title}</CoreValueTitle>
-              </CoreValue>
-              {index !== CoreValuesList.length - 1 && (
-                <HorizontalLine isVertical={window.innerWidth <= 768} />
-              )}
-            </React.Fragment>
+              ) : null}
+              <Icon src={value.image} alt={value.title} />
+              {/* Show the title below for "Continuous Evolution" and "Collaboration" */}
+              {value.title === "Continuous Evolution" || value.title === "Collaboration" ? (
+                <CoreValueTitle>{value.title}</CoreValueTitle>
+              ) : null}
+            </CoreValue>
           ))}
         </CoreValuesWrapper>
       </Container>
