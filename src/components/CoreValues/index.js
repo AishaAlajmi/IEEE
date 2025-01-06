@@ -1,85 +1,42 @@
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   OuterContainer,
   Container,
-  Wrapper,
   Title,
-  CardContainer,
-  ArrowButton,
-  TitleArrow,
-} from "./CommittesStyle";
-import CommitteeCard from "../Cards/CommitteesCards";
-import { Committees } from "../../data/constants";
+  SectionArrow,
+  CoreValuesWrapper,
+  CoreValue,
+  Icon,
+  CoreValueTitle,
+  HorizontalLine,
+} from "./CoreValuesStyle";
+import { CoreValuesList } from "../../data/constants";
+import SectionArrowImg from "../../images/Polygon 7.png";
 
-const CoreValues = ({ openModal, setOpenModal }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(3); // Default to 3 cards
-
-  // Adjust visibleCards based on screen width
-  const handleResize = () => {
-    if (window.innerWidth <= 768) {
-      setVisibleCards(1); // Mobile: 1 card
-    } else if (window.innerWidth <= 1024) {
-      setVisibleCards(2); // Tablet: 2 cards
-    } else {
-      setVisibleCards(3); // Desktop: 3 cards
-    }
-  };
-
-  // Add resize event listener
-  useEffect(() => {
-    handleResize(); // Set initial value
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Move to the next set of committees
-  const handleNext = () => {
-    if (currentIndex + visibleCards < Committees.length) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
-
-  // Move to the previous set of committees
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
+const CoreValuesSection = () => {
   return (
     <OuterContainer>
       <Container>
         <Title>
-          <TitleArrow>&#9664;</TitleArrow> Committees
+          <SectionArrow src={SectionArrowImg} alt="Arrow Icon" />
+          Core Values
         </Title>
-        <Wrapper>
-          <ArrowButton onClick={handlePrev} disabled={currentIndex === 0}>
-            &#8249;
-          </ArrowButton>
-          <CardContainer>
-            {Committees.slice(currentIndex, currentIndex + visibleCards).map(
-              (committee) => (
-                <CommitteeCard
-                  key={committee.id}
-                  committee={committee}
-                  openModal={openModal}
-                  setOpenModal={setOpenModal}
-                />
-              )
-            )}
-          </CardContainer>
-          <ArrowButton
-            onClick={handleNext}
-            disabled={currentIndex + visibleCards >= Committees.length}
-          >
-            &#8250;
-          </ArrowButton>
-        </Wrapper>
+        <CoreValuesWrapper>
+          {CoreValuesList.map((value, index) => (
+            <React.Fragment key={value.id}>
+              <CoreValue isUp={index === 1 || index === 3}>
+                <Icon src={value.image} alt={value.title} />
+                <CoreValueTitle>{value.title}</CoreValueTitle>
+              </CoreValue>
+              {index !== CoreValuesList.length - 1 && (
+                <HorizontalLine isVertical={window.innerWidth <= 768} />
+              )}
+            </React.Fragment>
+          ))}
+        </CoreValuesWrapper>
       </Container>
     </OuterContainer>
   );
 };
 
-export default CoreValues;
+export default CoreValuesSection;
