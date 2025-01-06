@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import ProjectDetails from "./components/ProjectDetails";
 import Committees from "./components/Committees"; // Import Committees component
+import CoreValues from "./components/CoreValues"; // Import Committees component
 import styled from "styled-components";
 
 // Define Body wrapper for the outer background
@@ -26,17 +27,7 @@ const SectionWrapper = styled.div`
   width: 100%;
   padding: 60px 20px; /* Add padding for spacing within sections */
   margin: 0 auto; /* Center the section */
-  max-width: 1200px; /* Restrict the content width */
-      border-radius: 16px;
-
-`;
-// Define SectionWrapper for the inner content
-const SectionWrapperHero = styled.div`
-  background-color: #e6eaf9; /* Inner content background color */
-  width: 100%;
-  padding: 60px 20px; /* Add padding for spacing within sections */
-  margin: 0 auto; /* Center the section */
-  max-width: 1200px; /* Restrict the content width */
+  max-width: 1100px; /* Restrict the content width */
       border-radius: 16px;
 
 `;
@@ -52,7 +43,8 @@ function App() {
         <Body>
           <SectionWrapper>
             <HeroSection />
-            <Projects openModal={openModal} setOpenModal={setOpenModal} />
+            <CoreValues />
+             <Projects openModal={openModal} setOpenModal={setOpenModal} />
             <Committees />
           </SectionWrapper>
           <Footer />
