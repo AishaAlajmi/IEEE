@@ -14,7 +14,7 @@ import styled from "styled-components";
 
 // Define Body wrapper for the outer background
 const Body = styled.div`
-  background-color: #011762; /* Outer background color */
+  background-color: #0B0D32; /* Matches the dark navy blue */
   width: 100%;
   overflow-x: hidden;
   margin: 0;
