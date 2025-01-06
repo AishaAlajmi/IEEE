@@ -1,110 +1,191 @@
-import styled from 'styled-components';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { Bio } from '../../data/constants';
-
+import React from "react";
+import styled from "styled-components";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import { Bio } from "../../data/constants";
+import IEEE from "./Group 26.png"; // Import the logo image
 const FooterContainer = styled.div`
   width: 100%;
-  padding: 2rem 0;
+  background-color: #0B0D32; /* Matches the dark navy blue */
+  padding: 20px 40px;
   display: flex;
-  justify-content: center;
-  //background: linear-gradient(100.26deg, rgba(0, 102, 255, 0.05) 42.33%, rgba(150, 0, 225, 0.05) 127.07%);
+  justify-content: space-evenly; /* Evenly distribute space between sections */
+  align-items: center;
+  color: white;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px; /* Reduced gap for smaller screens */
+    text-align: center;
+  }
 `;
 
-
-const FooterWrapper = styled.footer`
-  width: 100%;
-  max-width: 1200px;
+const LeftSection = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  align-items: center;
-  padding: 1rem;
-  color: ${({ theme }) => theme.text_primary};
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
-const Logo = styled.h1`
-  font-weight: 600;
-  font-size: 20px;
-  color: ${({ theme }) => theme.primary};
-`;
-
-const Nav = styled.nav`
-  width: 100%;
-  max-width: 800px;
-  margin-top: 0.5rem;
+const CenterSection = styled.div`
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px; /* Reduced spacing between sections */
+
   @media (max-width: 768px) {
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    text-align: center;
-    font-size: 12px;
+    align-items: center;
+    margin: 0; /* Remove margin for smaller screens */
   }
 `;
 
-const NavLink = styled.a`
-color: ${({ theme }) => theme.text_primary};
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.2s ease-in-out;
-  &:hover {
-    color: ${({ theme }) => theme.primary};
-  }
+const RightSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
   @media (max-width: 768px) {
-    font-size: 1rem;
+    align-items: center;
   }
+`;
+
+const Logo = styled.img`
+  width: 120px;
+  height: auto;
+`;
+
+const BranchDetails = styled.div`
+  font-size: 14px;
+  color: #d1d5db;
+  margin-top: 8px;
 `;
 
 const SocialMediaIcons = styled.div`
   display: flex;
-  margin-top: 1rem;
+  gap: 15px;
+  margin-top: 10px;
 `;
 
 const SocialMediaIcon = styled.a`
-  display: inline-block;
-  margin: 0 1rem;
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.text_primary};
-  transition: color 0.2s ease-in-out;
+  font-size: 24px;
+  color: white;
+  transition: color 0.2s;
+
   &:hover {
-    color: ${({ theme }) => theme.primary};
+    color: #87ceeb;
   }
 `;
 
-const Copyright = styled.p`
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-  color: ${({ theme }) => theme.soft2};
-  text-align: center;
+const Username = styled.div`
+  font-size: 14px;
+  margin-top: 10px;
+  color: #d1d5db;
 `;
+
+const SubscriptionText = styled.div`
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #d1d5db;
+  text-align: left; /* Aligns the text to the left */
+  width: 100%; /* Ensures it spans the full width of its container */
+
+  @media (max-width: 768px) {
+    text-align: center; /* Center it on smaller screens if needed */
+  }
+`;
+
+
+const SubscriptionForm = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+`;
+const EmailInput = styled.input`
+padding: 8px;
+font-size: 14px;
+border: 1px solid white; /* Added white border */
+border-radius: 4px;
+background-color: #0B0D32; /* Matches the dark navy blue */
+color: white; /* Text color for contrast */
+margin-right: 10px;
+width: 200px;
+
+&::placeholder {
+  color: #d1d5db; /* Placeholder color for better visibility */
+}
+
+@media (max-width: 768px) {
+  margin-right: 0;
+  width: 100%;
+}
+`;
+
+const SubscribeButton = styled.button`
+padding: 8px 16px;
+font-size: 14px;
+border: none;
+border-radius: 4px;
+background-color: #012DC1; /* Button background color */
+color: white; /* Button text color */
+cursor: pointer;
+transition: background-color 0.3s ease;
+
+&:hover {
+  background-color: #043EFF; /* Slightly lighter blue on hover */
+}
+
+@media (max-width: 768px) {
+  width: 100%;
+}
+`;
+
+
 
 function Footer() {
   return (
     <FooterContainer>
-      <FooterWrapper>
-        <Logo>IEEE</Logo>
-        <Nav>
-          <NavLink href="#">Home</NavLink>
-          <NavLink href="#">Explore</NavLink>
-          <NavLink href="#">News</NavLink>
-          <NavLink href="#">About Us</NavLink>
-          <NavLink href="#">Join Us</NavLink>
-          <NavLink href="#">Contact</NavLink>
-    
-        </Nav>
-        <SocialMediaIcons>
-          <SocialMediaIcon href={Bio.twitter} target="display"><TwitterIcon /></SocialMediaIcon>
-          <SocialMediaIcon href={Bio.linkedin} target="display"><LinkedInIcon /></SocialMediaIcon>
-        </SocialMediaIcons>
-        <Copyright>
-          &copy; 2024 Aisha Alajmi. All rights reserved.
-        </Copyright>
+      {/* Left Section */}
+      <LeftSection>
+        <Logo src={IEEE} alt="IEEE Logo" />
+        <BranchDetails>
+          King Abdulaziz University <br />
+          Female Branch
+        </BranchDetails>
+      </LeftSection>
 
-      </FooterWrapper>
+      {/* Center Section */}
+      <CenterSection>
+        <div>Follow us</div>
+        <SocialMediaIcons>
+          <SocialMediaIcon href={Bio.twitter} target="_blank">
+            <TwitterIcon />
+          </SocialMediaIcon>
+          <SocialMediaIcon href={Bio.linkedin} target="_blank">
+            <LinkedInIcon />
+          </SocialMediaIcon>
+          <SocialMediaIcon href={Bio.instagram} target="_blank">
+            <InstagramIcon />
+          </SocialMediaIcon>
+        </SocialMediaIcons>
+        <Username>@ieee_kau_sb</Username>
+      </CenterSection>
+
+      {/* Right Section */}
+      <RightSection>
+        <SubscriptionText>Stay Informed</SubscriptionText>
+        <SubscriptionForm>
+          <EmailInput type="email" placeholder="Email" />
+          <SubscribeButton>Subscribe</SubscribeButton>
+        </SubscriptionForm>
+      </RightSection>
     </FooterContainer>
   );
 }

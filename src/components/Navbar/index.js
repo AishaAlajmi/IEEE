@@ -6,24 +6,23 @@ import {
   Span,
   NavLogo,
   NavItems,
-  GitHubButton,
-  ButtonContainer,
+  SearchContainer,
   MobileIcon,
   MobileMenu,
   MobileLink,
+  MobileSearchContainer,
 } from './NavbarStyledComponent';
 import IEEE from './ieee-logo 1.png';
 import { FaBars } from 'react-icons/fa';
-import { Bio } from '../../data/constants';
-import { useTheme } from 'styled-components';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const theme = useTheme();
+
   return (
     <Nav>
       <NavbarContainer>
-        {/* Use the IEEE logo instead of DiCssdeck */}
+        {/* Logo Section */}
         <NavLogo to='/'>
           <a
             style={{
@@ -36,11 +35,12 @@ const Navbar = () => {
             <img
               src={IEEE}
               alt="IEEE Logo"
-              style={{ width: '30px', height: 'auto', }} // Adjust size as needed
+              style={{ width: '30px', height: 'auto' }} // Adjust size as needed
             />
             <Span>IEEE</Span>
           </a>
         </NavLogo>
+
         <MobileIcon>
           <FaBars
             onClick={() => {
@@ -48,6 +48,8 @@ const Navbar = () => {
             }}
           />
         </MobileIcon>
+
+        {/* Navigation Links */}
         <NavItems>
           <NavLink href="#">Home</NavLink>
           <NavLink href="#">Explore</NavLink>
@@ -56,13 +58,21 @@ const Navbar = () => {
           <NavLink href="#">Join Us</NavLink>
           <NavLink href="#">Contact</NavLink>
         </NavItems>
-        <ButtonContainer>
-          <GitHubButton href={Bio.github} target="_blank">
-            Github Profile
-          </GitHubButton>
-        </ButtonContainer>
+
+        {/* Search Bar */}
+        <SearchContainer>
+          <SearchIcon />
+          <input type="text" placeholder="Search" />
+        </SearchContainer>
+
+        {/* Mobile Menu */}
         {isOpen && (
           <MobileMenu isOpen={isOpen}>
+            {/* Search Bar in Mobile Menu */}
+            <MobileSearchContainer>
+              <SearchIcon />
+              <input type="text" placeholder="Search" />
+            </MobileSearchContainer>
             <MobileLink
               href="#"
               onClick={() => {
@@ -86,21 +96,24 @@ const Navbar = () => {
               }}
             >
               News
-            </MobileLink> <MobileLink
+            </MobileLink>
+            <MobileLink
               href="#"
               onClick={() => {
                 setIsOpen(!isOpen);
               }}
             >
               About Us
-            </MobileLink> <MobileLink
+            </MobileLink>
+            <MobileLink
               href="#"
               onClick={() => {
                 setIsOpen(!isOpen);
               }}
             >
               Join Us
-            </MobileLink><MobileLink
+            </MobileLink>
+            <MobileLink
               href="#"
               onClick={() => {
                 setIsOpen(!isOpen);
@@ -108,19 +121,6 @@ const Navbar = () => {
             >
               Contact
             </MobileLink>
-
-            <GitHubButton
-              style={{
-                padding: '10px 16px',
-                background: `${theme.primary}`,
-                color: 'white',
-                width: 'max-content',
-              }}
-              href={Bio.github}
-              target="_blank"
-            >
-              Github Profile
-            </GitHubButton>
           </MobileMenu>
         )}
       </NavbarContainer>
