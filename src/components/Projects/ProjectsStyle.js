@@ -7,12 +7,49 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   max-width: 1350px;
-  padding: 10px 0px 100px 0;
+  padding: 10px 0px 50px 0; /* Reduce bottom padding for mobile */
   gap: 12px;
 
   @media (max-width: 768px) {
     flex-direction: row; /* Ensure items are in a row */
     justify-content: space-between; /* Arrows stay left and right */
+    padding: 5px 0; /* Reduce overall padding for mobile */
+  }
+`;
+
+export const ArrowButton = styled.button`
+  background-color: #021f87;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute; /* Use absolute positioning for arrows */
+  top: 50%; /* Adjust the vertical alignment for desktop */
+  transform: translateY(-50%); /* Adjust for perfect vertical centering */
+  z-index: 2;
+
+  &:first-child {
+    left: -20px; /* Position the left arrow */
+  }
+
+  &:last-child {
+    right: -20px; /* Position the right arrow */
+  }
+
+  &:hover {
+    background-color: #043eff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+  }
+
+  @media (max-width: 768px) {
+    top: 40%; /* Move arrows closer to the center of the images on mobile */
   }
 `;
 
@@ -73,43 +110,5 @@ export const SectionArrow = styled.img`
 
   @media (max-width: 768px) {
     width: 30px;
-  }
-`;
-
-
-export const ArrowButton = styled.button`
-  background-color: #021F87;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 24px;
-  font-weight: bold;
-  border-radius: 50%;
-  cursor: pointer;
-  position: absolute; /* Use absolute positioning for arrows */
-  top: 45%; /* Move the arrow slightly up */
-  transform: translateY(-50%); /* Adjust for perfect vertical centering */
-  z-index: 2;
-
-  &:first-child {
-    left: -20px; /* Position the left arrow */
-  }
-
-  &:last-child {
-    right: -20px; /* Position the right arrow */
-  }
-
-  &:hover {
-    background-color: #043eff;
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    background-color: #ccc;
-  }
-
-  @media (max-width: 768px) {
-    top: 30%; /* Keep the arrow slightly higher on mobile too */
-  
   }
 `;
