@@ -94,9 +94,6 @@ const SubscriptionText = styled.div`
   text-align: left; /* Aligns the text to the left */
   width: 100%; /* Ensures it spans the full width of its container */
 
-  @media (max-width: 768px) {
-    text-align: center; /* Center it on smaller screens if needed */
-  }
 `;
 const SubscriptionForm = styled.div`
   display: flex;
