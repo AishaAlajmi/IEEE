@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   HeroContainer,
   HeroInnerContainer,
@@ -26,6 +26,14 @@ const HeroSection = () => {
       prevIndex === 0 ? Gallary.length - 1 : prevIndex - 1
     );
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, [currentIndex]);
 
   return (
     <div id="about">

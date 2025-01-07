@@ -27,7 +27,7 @@ export const ArrowButton = styled.button`
   border-radius: 50%;
   cursor: pointer;
   position: absolute; /* Use absolute positioning for arrows */
-  top: 50%; /* Adjust the vertical alignment for desktop */
+  top: 40%; /* Adjust the vertical alignment for desktop */
   transform: translateY(-50%); /* Adjust for perfect vertical centering */
   z-index: 2;
 
