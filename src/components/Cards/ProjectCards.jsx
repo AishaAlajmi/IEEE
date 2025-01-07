@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Card = styled.div`
   width: 330px;
-  background-color: #E6EAF9;
+  background-color: #e6eaf9;
   cursor: pointer;
   border-radius: 16px;
   overflow: hidden;
@@ -20,8 +20,8 @@ const Card = styled.div`
 `;
 
 const Image = styled.img`
-  width: 145px; /* Set a fixed width for the circular image */
-  height: 200px; /* Set a fixed height (same as width) */
+  width: 185px; /* Set a fixed width for the circular image */
+  height: 250px; /* Set a fixed height (same as width) */
   object-fit: cover; /* Ensure the image is cropped correctly */
   border-radius: 20%; /* Makes the image circular */
 `;
@@ -38,20 +38,20 @@ const Details = styled.div`
 const Title = styled.div`
   font-size: 22px;
   font-weight: 600;
-  color: #012DC1;
+  color: #012dc1;
   text-align: center;
   line-height: 1.4;
 `;
 
 const ProjectCards = ({ project, setOpenModal }) => {
-    return (
-        <Card onClick={() => setOpenModal({ state: true, project: project })}>
-            <Image src={project.image} alt={project.title} />
-            <Details>
-                <Title>{project.title}</Title>
-            </Details>
-        </Card>
-    );
+  return (
+    <Card onClick={() => setOpenModal({ state: true, project: project })}>
+      <Image src={project.image} alt={project.title} />
+      <Details>
+        <Title>{project.title}</Title>
+      </Details>
+    </Card>
+  );
 };
 
 export default ProjectCards;
