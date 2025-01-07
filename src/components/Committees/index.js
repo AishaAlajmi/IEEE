@@ -1,13 +1,10 @@
-
 import React, { useState, useEffect } from "react";
 import {
   OuterContainer,
   Container,
   Wrapper,
-  Title,
-  CardContainer,
+  CardContainer,SectionTitle, SectionArrow ,
   ArrowButton,
-  SectionArrow,
 } from "./CommittesStyle";
 import CommitteeCard from "../Cards/CommitteesCards";
 import { Committees } from "../../data/constants";
@@ -15,34 +12,30 @@ import SectionArrowImg from "../../images/Polygon 7.png";
 
 const CommitteesSection = ({ openModal, setOpenModal }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(3); // Default to 3 cards
+  const [visibleCards, setVisibleCards] = useState(3);
 
-  // Adjust visibleCards based on screen width
   const handleResize = () => {
     if (window.innerWidth <= 768) {
-      setVisibleCards(1); // Mobile: 1 card
+      setVisibleCards(1);
     } else if (window.innerWidth <= 1024) {
-      setVisibleCards(2); // Tablet: 2 cards
+      setVisibleCards(2);
     } else {
-      setVisibleCards(3); // Desktop: 3 cards
+      setVisibleCards(3);
     }
   };
 
-  // Add resize event listener
   useEffect(() => {
-    handleResize(); // Set initial value
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Move to the next set of committees
   const handleNext = () => {
     if (currentIndex + visibleCards < Committees.length) {
       setCurrentIndex(currentIndex + 1);
     }
   };
 
-  // Move to the previous set of committees
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
@@ -52,10 +45,10 @@ const CommitteesSection = ({ openModal, setOpenModal }) => {
   return (
     <OuterContainer>
       <Container>
-        <Title>
-        <SectionArrow src={SectionArrowImg} alt="Arrow Icon" />
-        Committees
-        </Title>
+        <SectionTitle>
+          <SectionArrow src={SectionArrowImg} alt="Arrow Icon" />
+          IEEE Committees
+        </SectionTitle>
         <Wrapper>
           <ArrowButton onClick={handlePrev} disabled={currentIndex === 0}>
             &#8249;

@@ -7,7 +7,7 @@ import { Bio } from "../../data/constants";
 import IEEE from "./Group 26.png"; // Import the logo image
 const FooterContainer = styled.div`
   width: 100%;
-  background-color: #0B0D32; /* Matches the dark navy blue */
+  background-color: #011762; /* Matches the dark navy blue */
   padding: 20px 40px;
   display: flex;
   justify-content: space-evenly; /* Evenly distribute space between sections */
@@ -113,7 +113,7 @@ padding: 8px;
 font-size: 14px;
 border: 1px solid white; /* Added white border */
 border-radius: 4px;
-background-color: #0B0D32; /* Matches the dark navy blue */
+background-color: #011762; /* Matches the dark navy blue */
 color: white; /* Text color for contrast */
 margin-right: 10px;
 width: 200px;

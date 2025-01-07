@@ -13,7 +13,7 @@ export const HeroContainer = styled.div`
   @media (max-width: 640px) {
     padding: 32px 16px;
   }
-`; export const HeroInnerContainer = styled.div`
+`;export const HeroInnerContainer = styled.div`
 display: flex;
 justify-content: center; /* Keeps the alignment centered */
 align-items: center;
@@ -56,7 +56,7 @@ text-align: left;
 export const Title = styled.div`
   font-weight: 700;
   font-size: 40px;
-  color: #021f87;
+  color: #021F87;
   line-height: 1.2;
   margin-bottom: 8px; /* Reduced margin between title and subtitle */
 
@@ -69,7 +69,7 @@ export const Title = styled.div`
 export const SubTitle = styled.div`
   font-size: 18px;
   line-height: 1.6;
-  color: #021f87;
+  color: #012DC1;
 
   @media (max-width: 960px) {
     font-size: 16px;
@@ -103,7 +103,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const ArrowButton = styled.button`
-  background: #021f87;
+  background: #011762;
   color: white;
   border: none;
   border-radius: 50%;

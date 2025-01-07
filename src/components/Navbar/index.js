@@ -6,23 +6,23 @@ import {
   Span,
   NavLogo,
   NavItems,
-  SearchContainer,
+  ButtonContainer,
   MobileIcon,
   MobileMenu,
   MobileLink,
-  MobileSearchContainer,
 } from './NavbarStyledComponent';
 import IEEE from './ieee-logo 1.png';
 import { FaBars } from 'react-icons/fa';
-import SearchIcon from '@mui/icons-material/Search';
+import { Bio } from '../../data/constants';
+import { useTheme } from 'styled-components';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-
+  const theme = useTheme();
   return (
     <Nav>
       <NavbarContainer>
-        {/* Logo Section */}
+        {/* Use the IEEE logo instead of DiCssdeck */}
         <NavLogo to='/'>
           <a
             style={{
@@ -35,12 +35,11 @@ const Navbar = () => {
             <img
               src={IEEE}
               alt="IEEE Logo"
-              style={{ width: '30px', height: 'auto' }} // Adjust size as needed
+              style={{ width: '30px', height: 'auto', }} // Adjust size as needed
             />
             <Span>IEEE</Span>
           </a>
         </NavLogo>
-
         <MobileIcon>
           <FaBars
             onClick={() => {
@@ -48,8 +47,6 @@ const Navbar = () => {
             }}
           />
         </MobileIcon>
-
-        {/* Navigation Links */}
         <NavItems>
           <NavLink href="#">Home</NavLink>
           <NavLink href="#">Explore</NavLink>
@@ -58,21 +55,10 @@ const Navbar = () => {
           <NavLink href="#">Join Us</NavLink>
           <NavLink href="#">Contact</NavLink>
         </NavItems>
-
-        {/* Search Bar */}
-        <SearchContainer>
-          <SearchIcon />
-          <input type="text" placeholder="Search" />
-        </SearchContainer>
-
-        {/* Mobile Menu */}
+        <ButtonContainer>
+        </ButtonContainer>
         {isOpen && (
           <MobileMenu isOpen={isOpen}>
-            {/* Search Bar in Mobile Menu */}
-            <MobileSearchContainer>
-              <SearchIcon />
-              <input type="text" placeholder="Search" />
-            </MobileSearchContainer>
             <MobileLink
               href="#"
               onClick={() => {
@@ -96,24 +82,21 @@ const Navbar = () => {
               }}
             >
               News
-            </MobileLink>
-            <MobileLink
+            </MobileLink> <MobileLink
               href="#"
               onClick={() => {
                 setIsOpen(!isOpen);
               }}
             >
               About Us
-            </MobileLink>
-            <MobileLink
+            </MobileLink> <MobileLink
               href="#"
               onClick={() => {
                 setIsOpen(!isOpen);
               }}
             >
               Join Us
-            </MobileLink>
-            <MobileLink
+            </MobileLink><MobileLink
               href="#"
               onClick={() => {
                 setIsOpen(!isOpen);
@@ -121,6 +104,7 @@ const Navbar = () => {
             >
               Contact
             </MobileLink>
+
           </MobileMenu>
         )}
       </NavbarContainer>

@@ -7,16 +7,11 @@ import con from '../images/Group 29.png';
 import cre from '../images/Group 30.png';
 import Collaboration from '../images/Group 31.png';
 import soci from '../images/Group 32.png';
-import SectionArrow from '../images/Polygon 7.png';
 
 export const Bio = {
   name: "Welcome to IEEE Club!",
   description:
     "The world's largest professional organization promotes innovation and technological excellence for humanity. We empower students in technical fields and embrace modern concepts for effective technological advancement and societal progress.",
-  github: "https://github.com/AishaAlajmi",
-
-  linkedin: "https://www.linkedin.com/in/",
-  twitter: "https://twitter.com/",
 };
 // Core values of the organization
 export const CoreValuesList = [
@@ -47,73 +42,64 @@ export const Gallary = [
     image: Img2,
 
   },
-];
-export const Committees = [
+];export const Committees = [
   {
     id: 9,
     title: "SOCIAL MEDIA AND WEBSITE",
     description:
-      "A company that aims to use computing to build a sustainable society, by developing and using computers and software in responsible ways, with a focus on environmental and economic sustainability, solving communication problems, and disposing of computing components properly.",
+      "This committee is responsible for managing the club's online presence, including social media accounts and the official website. They ensure timely updates, engaging content, and a professional online image. Members collaborate on campaigns, design visuals, write posts, and analyze engagement metrics to improve outreach and strengthen the club's connection with its audience.",
     image: MEDIA,
-
   },
   {
     id: 4,
-    title: "PUBLICITY ",
+    title: "PUBLICITY",
     description:
-      "Ifsah is an integrated accounting solution that enhances financial transparency by ensuring accurate disclosures of transactions with related parties, customers, and suppliers. It automates financial statement generation, ensures compliance with built-in alerts and approvals, and features a smart digital assistant to support accountants in making informed decisions and improving company performance.",
-    image:
-      PUBLICITY
+      "The Publicity committee handles all promotional efforts for the club. From designing posters and banners to planning creative marketing campaigns, this team ensures the club's events and initiatives reach the widest audience possible. They specialize in creating compelling visuals, coordinating with other committees, and utilizing both traditional and digital platforms to maximize visibility.",
+    image: PUBLICITY,
   },
   {
     id: 2,
     title: "EXECUTION AND FINANCE",
     description:
-      "Anis is an AI-powered intelligent character designed to improve psychological therapy. It analyzes the patient's psychological and medical data, as well as their social media activity (with the patient's consent), to provide personalized consultations that predict psychological crises before they occur, enabling early intervention and appropriate support. Anis enhances communication between patients and specialists, raises patients' awareness of their condition, improving the quality of care while reducing costs and the number of therapy sessions.",
-    image:
-      EXECUTION
+      "This committee oversees the practical implementation of events and manages the club’s financial resources. They ensure every event is well-organized, all materials and logistics are in place, and budgets are adhered to. Members are responsible for fundraising, expense tracking, and finding innovative ways to optimize resources while ensuring the success of all activities.",
+    image: EXECUTION,
   },
   {
     id: 1,
     title: "SOCIAL MEDIA AND WEBSITE",
     description:
-      "Musaned is an integrated educational system that generates questions based on the subject learning objectives (CLOs) and the students’ level using artificial intelligence. Students’ performance in the training questions is analyzed to provide recommendations and feedback that help them improve their understanding of the material. It also allows students to compete in solving questions quickly and accurately through interactive competitions, which enhances the competitiveness and enjoyment of the subject in addition to raising the academic level.",
+      "The Social Media and Website team works tirelessly to enhance the digital footprint of the club. They design user-friendly website interfaces, share impactful stories, and post updates about ongoing projects and achievements. Their efforts directly contribute to maintaining the club's reputation as a forward-thinking, innovative organization.",
     image: PUBLICITY,
-
   },
 ];
+
 export const projects = [
   {
     id: 9,
     title: "IEEE Day Celebration",
     description:
-      "A company that aims to use computing to build a sustainable society, by developing and using computers and software in responsible ways, with a focus on environmental and economic sustainability, solving communication problems, and disposing of computing components properly.",
+      "The IEEE Day Celebration focuses on honoring innovation and technological advancements. It includes workshops, talks by industry professionals, and interactive activities aimed at inspiring creativity and collaboration among participants. The event showcases the latest projects and achievements of the club, fostering a sense of pride and motivation.",
     image: Img1,
-
   },
   {
     id: 4,
     title: "KAUST Trip",
     description:
-      "Ifsah is an integrated accounting solution that enhances financial transparency by ensuring accurate disclosures of transactions with related parties, customers, and suppliers. It automates financial statement generation, ensures compliance with built-in alerts and approvals, and features a smart digital assistant to support accountants in making informed decisions and improving company performance.",
+      "The KAUST Trip offers participants an exclusive opportunity to explore one of the leading research universities in the world. Attendees gain insights into cutting-edge research, visit state-of-the-art labs, and network with experts in various fields of technology and science. The trip is designed to ignite curiosity and encourage academic growth.",
     image: Img2,
-
   },
   {
     id: 2,
     title: "Engineering Day 2024",
     description:
-      "Anis is an AI-powered intelligent character designed to improve psychological therapy. It analyzes the patient's psychological and medical data, as well as their social media activity (with the patient's consent), to provide personalized consultations that predict psychological crises before they occur, enabling early intervention and appropriate support. Anis enhances communication between patients and specialists, raises patients' awareness of their condition, improving the quality of care while reducing costs and the number of therapy sessions.",
+      "Engineering Day 2024 celebrates the ingenuity and creativity of engineering students. The event includes project exhibitions, technical competitions, and inspiring keynote speeches. Participants have the chance to showcase their work, collaborate with peers, and learn from industry leaders, making it an unforgettable experience.",
     image: Img1,
-
-
   },
   {
     id: 1,
     title: "IEEE Day Celebration",
     description:
-      "Musaned is an integrated educational system that generates questions based on the subject learning objectives (CLOs) and the students’ level using artificial intelligence. Students’ performance in the training questions is analyzed to provide recommendations and feedback that help them improve their understanding of the material. It also allows students to compete in solving questions quickly and accurately through interactive competitions, which enhances the competitiveness and enjoyment of the subject in addition to raising the academic level.",
+      "This annual celebration highlights the impact of IEEE in advancing technology for humanity. The event features panel discussions, networking sessions, and hands-on workshops, allowing attendees to engage with like-minded individuals and gain inspiration for future innovations. It's a platform to honor technological excellence and collaboration.",
     image: Img2,
-
   },
 ];

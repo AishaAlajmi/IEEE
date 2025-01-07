@@ -6,21 +6,20 @@ export const OuterContainer = styled.div`
   justify-content: center;
   padding: 40px 20px;
 `;
-
-export const Title = styled.div`
+export const SectionTitle = styled.div`
   display: flex;
   align-items: center;
   font-size: 42px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #012dc1;
+  color: #021f87; /* Change the color to match your theme */
   align-self: flex-start;
   margin-left: 100px;
 
   @media (max-width: 768px) {
     font-size: 32px;
     margin-bottom: 16px;
-    margin-left: 20px;
+    margin-left: 20px; /* Move to the left on smaller screens */
   }
 `;
 
@@ -33,6 +32,7 @@ export const SectionArrow = styled.img`
     width: 30px;
   }
 `;
+
 
 export const Container = styled.div`
   background: #e6eaf9;
@@ -64,7 +64,7 @@ export const CoreValuesWrapper = styled.div`
     left: 10%; /* Start slightly after the first image */
     right: 10%; /* End slightly before the last image */
     height: 2px;
-    background-color: #012dc1;
+    background-color: #011762;
     z-index: 0;
   }
 

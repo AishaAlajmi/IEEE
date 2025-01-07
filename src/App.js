@@ -14,7 +14,7 @@ import styled from "styled-components";
 
 // Define Body wrapper for the outer background
 const Body = styled.div`
-  background-color: #0B0D32; /* Matches the dark navy blue */
+  background-color: #011762; /* Matches the dark navy blue */
   width: 100%;
   overflow-x: hidden;
   margin: 0;
@@ -27,7 +27,7 @@ const SectionWrapper = styled.div`
   width: 100%;
   padding: 60px 20px; /* Add padding for spacing within sections */
   margin: 0 auto; /* Center the section */
-  max-width: 1100px; /* Restrict the content width */
+  max-width: 1200px; /* Restrict the content width */
       border-radius: 16px;
 
 `;

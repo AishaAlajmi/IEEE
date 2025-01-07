@@ -49,22 +49,23 @@ export const Container = styled.div`
   }
 `;
 
-export const Title = styled.div`
-display: flex;
-align-items: center; /* Align arrow and text vertically */
-font-size: 42px;
-font-weight: 600;
-margin-bottom: 20px;
-color: #012DC1;
-align-self: flex-start;
-margin-left: 100px; /* Increased margin to move it further to the right */
+export const SectionTitle = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #021f87; /* Change the color to match your theme */
+  align-self: flex-start;
+  margin-left: 100px;
 
-@media (max-width: 768px) {
-  font-size: 32px;
-  margin-bottom: 16px;
-  margin-left: 60px; /* Adjust for smaller screens */
-}
+  @media (max-width: 768px) {
+    font-size: 32px;
+    margin-bottom: 16px;
+    margin-left: 20px; /* Move to the left on smaller screens */
+  }
 `;
+
 export const SectionArrow = styled.img`
   width: 20px;
   height: auto;
@@ -77,7 +78,7 @@ export const SectionArrow = styled.img`
 
 
 export const ArrowButton = styled.button`
-  background-color: #012dc1;
+  background-color: #021F87;
   color: white;
   border: none;
   padding: 10px 20px;

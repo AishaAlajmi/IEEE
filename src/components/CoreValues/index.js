@@ -2,10 +2,8 @@ import React from "react";
 import {
   OuterContainer,
   Container,
-  Title,
-  SectionArrow,
   CoreValuesWrapper,
-  CoreValue,
+  CoreValue,SectionTitle, SectionArrow,
   Icon,
   CoreValueTitle,
 } from "./CoreValuesStyle";
@@ -16,19 +14,17 @@ const CoreValuesSection = () => {
   return (
     <OuterContainer>
       <Container>
-        <Title>
+        <SectionTitle>
           <SectionArrow src={SectionArrowImg} alt="Arrow Icon" />
           Core Values
-        </Title>
+        </SectionTitle>
         <CoreValuesWrapper>
           {CoreValuesList.map((value) => (
             <CoreValue key={value.id}>
-              {/* Show the title above only for "Creativity" and "Social Responsibility" */}
               {value.title === "Creativity" || value.title === "Social Responsibility" ? (
                 <CoreValueTitle>{value.title}</CoreValueTitle>
               ) : null}
               <Icon src={value.image} alt={value.title} />
-              {/* Show the title below for "Continuous Evolution" and "Collaboration" */}
               {value.title === "Continuous Evolution" || value.title === "Collaboration" ? (
                 <CoreValueTitle>{value.title}</CoreValueTitle>
               ) : null}

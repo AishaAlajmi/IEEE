@@ -1,22 +1,21 @@
 import { Link as LinkR } from 'react-router-dom';
 import styled from 'styled-components';
+import _default from '../../themes/default';
 
 export const Nav = styled.div`
-  background-color: ${({ theme }) => theme.card_light};
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-
-  @media (max-width: 960px) {
-    transition: 0.8s all ease;
-  }
+    background-color:#011762;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    @media (max-width: 960px) {
+        trastion: 0.8s all ease;
+    }
 `;
-
 export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -29,118 +28,68 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavLogo = styled(LinkR)`
+  width: 80%;    
+  padding: 0 20px; /* Add padding to move the logo */
   display: flex;
   justify-content: start;
   align-items: center;
   text-decoration: none;
-
   @media (max-width: 640px) {
-    padding: 0 10px;
+    padding: 0 10px; /* Adjust for smaller screens */
   }
 `;
 
 export const Span = styled.div`
-  padding: 0 4px;
-  font-weight: bold;
-  font-size: 18px;
+    padding: 0 4px;
+    font-weight: bold;
+    font-size: 18px;
 `;
-
 export const NavItems = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-  list-style: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 32px;
+    padding: 0 6px;
+    list-style: none;
 
-  @media (max-width: 768px) {
-    display: none;
-  }
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
 `;
-
 export const NavLink = styled.a`
   color: ${({ theme }) => theme.text_primary};
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-
-  &:hover {
-    color: ${({ theme }) => theme.primary};
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  
+  :hover {
+    color:#043eff;
   }
 
   &.active {
-    border-bottom: 2px solid ${({ theme }) => theme.primary};
+    border-bottom: 2px solid #043eff;
   }
 `;
 
-export const SearchContainer = styled.div`
+export const ButtonContainer = styled.div`
+  width: 80%;  
+  height: 100%;
   display: flex;
+  justify-content: end;
   align-items: center;
-  gap: 8px;
-
-  input {
-    padding: 5px 10px;
-    border: 1px solid #d1d5db;
-    border-radius: 4px;
-    background-color: #0b0d32;
-    color: white;
-    font-size: 14px;
-
-    &::placeholder {
-      color: #d1d5db;
-    }
-  }
-
-  svg {
-    color: ${({ theme }) => theme.text_primary};
-    cursor: pointer;
-    transition: color 0.3s;
-
-    &:hover {
-      color: ${({ theme }) => theme.primary};
-    }
-  }
-
-  @media (max-width: 768px) {
+  padding: 0 6px;
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
 
-export const MobileSearchContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
-
-  input {
-    padding: 5px 10px;
-    border: 1px solid #d1d5db;
-    border-radius: 4px;
-    background-color: #0b0d32;
-    color: white;
-    font-size: 14px;
-    width: 100%;
-
-    &::placeholder {
-      color: #d1d5db;
-    }
-  }
-
-  svg {
-    color: ${({ theme }) => theme.text_primary};
-    cursor: pointer;
-    transition: color 0.3s;
-
-    &:hover {
-      color: ${({ theme }) => theme.primary};
-    }
-  }
-`;
 
 export const MobileIcon = styled.div`
   display: none;
-
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
     top: 0;
@@ -150,20 +99,98 @@ export const MobileIcon = styled.div`
     cursor: pointer;
     color: ${({ theme }) => theme.text_primary};
   }
-`;
+`
 
 export const MobileMenu = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    padding: 12px 40px 24px 40px;
+    background: ${({ theme }) => theme.card_light + 99};
+    transition: all 0.6s ease-in-out;
+    transform: ${({ isOpen }) => (isOpen ? 'translateY(0)' : 'translateY(-100%)')};
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
+    z-index: ${({ isOpen }) => (isOpen ? '1000' : '-1000')};
+
+`
+
+export const MobileMenuItems = styled.ul`
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 16px;
-  position: absolute;
-  top: 80px;
-  right: 0;
+  gap: 32px;
+  list-style: none;
   width: 100%;
-  padding: 12px 40px 24px 40px;
-  background: ${({ theme }) => theme.card_light + 99};
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  z-index: ${({ isOpen }) => (isOpen ? '1000' : '-1000')};
+  height: 100%;
+`
+
+export const MobileMenuLink = styled(LinkR)`
+  color: ${({ theme }) => theme.text_primary};
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  :hover {
+    color:#043eff;
+  }
+
+  &.active {
+    border-bottom: 2px solid #043eff;
+  }
+`;
+
+export const MobileMenuButton = styled.a`
+  border: 1.8px solid ${({ theme }) => theme.primary};
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 70%;
+  border-radius: 20px;
+  color: ${({ theme }) => theme.primary};
+  cursor: pointer;
+  padding: 0 20px;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.6s ease-in-out;
+
+  :hover {
+    background: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.white};
+  }
+`;
+
+export const MobileLink = styled.a`
+  color: ${({ theme }) => theme.text_primary};
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  :hover {
+    color: ${({ theme }) => theme.primary};
+  }
+
+  &.active {
+    border-bottom: 2px solid ${({ theme }) => theme.primary};
+  }
+`;
+
+export const MobileNavLogo = styled(LinkR)`
+  width: 80%;
+  padding: 0 6px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-decoration: none;
+  @media (max-width: 640px) {
+    padding: 0 0px;
+  }
 `;

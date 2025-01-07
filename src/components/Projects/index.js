@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import {
   OuterContainer,
   Container,
-  Wrapper,
-  Title,
+  Wrapper,SectionTitle, SectionArrow,
   CardContainer,
   ArrowButton,
-  SectionArrow,
 } from "./ProjectsStyle";
 import ProjectCard from "../Cards/ProjectCards";
 import { projects } from "../../data/constants";
@@ -16,7 +14,6 @@ const Projects = ({ openModal, setOpenModal }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
 
-  // Adjust visibleCards based on screen width
   const handleResize = () => {
     if (window.innerWidth <= 768) {
       setVisibleCards(1);
@@ -27,21 +24,18 @@ const Projects = ({ openModal, setOpenModal }) => {
     }
   };
 
-
   useEffect(() => {
-    handleResize(); // Set initial value
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Move to the next set of projects
   const handleNext = () => {
     if (currentIndex + visibleCards < projects.length) {
       setCurrentIndex(currentIndex + 1);
     }
   };
 
-  // Move to the previous set of projects
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
@@ -50,10 +44,11 @@ const Projects = ({ openModal, setOpenModal }) => {
 
   return (
     <OuterContainer>
-  <Container>
-        <Title>
-        <SectionArrow src={SectionArrowImg} alt="Arrow Icon" />
-        Achievements  </Title>
+      <Container>
+        <SectionTitle>
+          <SectionArrow src={SectionArrowImg} alt="Arrow Icon" />
+          Achievements
+        </SectionTitle>
         <Wrapper>
           <ArrowButton onClick={handlePrev} disabled={currentIndex === 0}>
             &#8249;
@@ -77,10 +72,9 @@ const Projects = ({ openModal, setOpenModal }) => {
             &#8250;
           </ArrowButton>
         </Wrapper>
-      </Container>       </OuterContainer>
-
+      </Container>
+    </OuterContainer>
   );
 };
 
 export default Projects;
-
